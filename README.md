@@ -59,7 +59,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Reach out - <a href = "mailto: cappacurta@gmail.com.com">Victor Cappa</a>
 
 
-Share the project - [Musical recycling](https://github.com/victorcappa/imaginAR)
+Share the project - [imaginAR](https://github.com/victorcappa/imaginAR)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
