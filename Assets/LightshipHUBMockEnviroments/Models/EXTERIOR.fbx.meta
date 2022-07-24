@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 0bcecf4e5533247839a22e7c904aed34
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_asphalt01_Material
+    second: {fileID: 2100000, guid: 6612d255f9c5b48838c8b8d5e96b3681, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building01_Material
+    second: {fileID: 2100000, guid: 63bcc59842e98427a9506553f9be56cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building02_Material
+    second: {fileID: 2100000, guid: b6460449fd1c5408884ff96399a3f7a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building03_Material
+    second: {fileID: 2100000, guid: 68f1646ae061d465c919fa52875e39b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building04_Material
+    second: {fileID: 2100000, guid: de2b22c518fa541da840d9e2930cf346, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building05_Material
+    second: {fileID: 2100000, guid: dedc0d591424c4240994acff0af1546e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building06_Material
+    second: {fileID: 2100000, guid: 1d712b96868bb4db9bd51c4bdf36d12d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building07_Material
+    second: {fileID: 2100000, guid: 94aeee395cc7047f7b31ca6f67337a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building08_Material
+    second: {fileID: 2100000, guid: 85383da956ccb41a0aec442fcd2e8368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_building09_Material
+    second: {fileID: 2100000, guid: 2ba115f240b6d48a9b1d5d52eee953b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_bush_Material
+    second: {fileID: 2100000, guid: 147aa9d418c8a4b05bd087ef169d2e04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_grass01_Material
+    second: {fileID: 2100000, guid: 5694c231c89af4e9eb7adb2a7d667fc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_grass02_Material
+    second: {fileID: 2100000, guid: bc02a5208735a409288cd40d1a711d51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_grass03_Material
+    second: {fileID: 2100000, guid: 12b5a9dae04ef4430823d26d59b67c00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_ground01_Material
+    second: {fileID: 2100000, guid: 87c5998617f2b4d84be790359d0058d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_pine01_Material
+    second: {fileID: 2100000, guid: fa7109644c6ba44b185ea4bc41bb81af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_rock01_Material
+    second: {fileID: 2100000, guid: bd489e99161be42d582565d0ae2947da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_rock02_MATERIAL
+    second: {fileID: 2100000, guid: 1db5b9b6f291f4aa29a0303517f118e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_rock03_MATERIAL
+    second: {fileID: 2100000, guid: 61bce995d839a410cab55e0ab36592ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_rock04_MATERIAL
+    second: {fileID: 2100000, guid: b5929446803fa4b08ac21a28fceab5f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_sky_MATERIAL
+    second: {fileID: 2100000, guid: 5800122114d484e8b9c06c5fcf24c916, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_tree01_Material1
+    second: {fileID: 2100000, guid: 9b82f60258c324ecb9a60a2f6caac9dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_tree02_Material
+    second: {fileID: 2100000, guid: 541344d2b24a442c3a43d07036ee65ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EXTERIOR_water01_Material
+    second: {fileID: 2100000, guid: 4a894a46d7a044d4dbcb0e70bd563c1b, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
