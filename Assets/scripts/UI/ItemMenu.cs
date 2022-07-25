@@ -30,11 +30,12 @@ public class ItemMenu : MonoBehaviour
 
         interactEvent.Invoke();
 
-        objSlot = Instantiate(objPrefab);
+        //objSlot = Instantiate(objPrefab);
         //objSlot.SetActive(value: false);
 
 
-        UIManager.VerificaSlots(objSlot);
+        UIManager.VerificaSlots(this.gameObject);
+        UIManager.FechaMenu();
     }
  
 

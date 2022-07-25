@@ -25,16 +25,23 @@ public class InstanciaItensManager : MonoBehaviour
 
         public SlotItem slotSelecionado;
 
-   void Update() 
-        {
+    UIManager UIManager;
+
+    private void Awake()
+    {
+        UIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+    }
+
+    void Update()
+    {
 
 
 
         if (PlatformAgnosticInput.touchCount <= 0) { return; }
+        var touch = PlatformAgnosticInput.GetTouch(0);
 
         if (slotSelecionado != null)
         {
-            var touch = PlatformAgnosticInput.GetTouch(0);
             ray = ARCamera.GetComponent<Camera>().ScreenPointToRay(touch.position);
 
             if (touch.phase == TouchPhase.Began && !touch.IsTouchOverUIObject())
@@ -60,7 +67,7 @@ public class InstanciaItensManager : MonoBehaviour
                         else if (hit.collider.gameObject.GetComponent<Rigidbody>() == null)
                         {
 
-                            itemSlotSelecionado = slotSelecionado.itemSlotObj;
+                            itemSlotSelecionado = slotSelecionado.iconeItemSlot.GetComponent<ItemMenu>().objPrefab;
 
                             // obj = Instantiate(OHcontroller.ObjectHolder,posicaoFinal, transform.rotation);
                             // Quaternion objRot = new Quaternion(0f, 0f, 0f, 0f);
@@ -85,7 +92,28 @@ public class InstanciaItensManager : MonoBehaviour
 
                 }
             }
+
+
+            if (slotSelecionado.isSelected == true && slotSelecionado.isFull == false && !touch.IsTouchOverUIObject())
+            {
+                UIManager.menuObj.SetActive(false);
+                slotSelecionado.isSelected = false;
+
+            }
+
         }
+        // if (slotSelecionado == null)
+        // {
+        //     if (touch.phase == TouchPhase.Began && touch.IsTouchOverUIObject())
+        //     {
+        //         UIManager.menuObj.SetActive(false);
+
+        //     }
+
+        // }
+
+
+
 
 
     }
@@ -96,12 +124,13 @@ public class InstanciaItensManager : MonoBehaviour
         float force = 50.0f;
 
 
+
         obj = Instantiate(itemSlotSelecionado, ARCamera.transform);
         obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         Rigidbody rb = obj.GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0f, 0f, 0f);
+        rb.velocity = posicaoFinal; //new Vector3(0f, 0f, 0f);
         rb.angularVelocity = new Vector3(0f, 0f, 0f);
 
         obj.SetActive(true);

@@ -17,8 +17,10 @@ public class UIManager : MonoBehaviour
 
     public SlotItem slotUI;
 
+    public GameObject menuObj;
 
-  public void MaisMenosAnim()
+
+    public void MaisMenosAnim()
   {
     if (maisAbriu == false)
     {
@@ -73,39 +75,41 @@ public class UIManager : MonoBehaviour
       if (slotUI.isFull == false && slotUI.isSelected == true )
       {
 
-        slotUI.itemSlotObj = Instantiate(itemMenu, slotUI.gameObject.transform.position, itemMenu.gameObject.transform.rotation);
-            slotUI.ItensManager.itemSlotSelecionado = slotUI.itemSlotObj;
-        slotUI.itemSlotObj.transform.parent = slotUI.gameObject.transform;
-        slotUI.itemSlotObj.transform.localScale = new Vector3 (80,80,80);
-            //slotUI.itemSlotObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            slotUI.iconeItemSlot = Instantiate(itemMenu, slotUI.gameObject.transform.position, itemMenu.gameObject.transform.rotation);
+            slotUI.ItensManager.itemSlotSelecionado = slotUI.iconeItemSlot.GetComponent<ItemMenu>().objPrefab;
+            slotUI.iconeItemSlot.transform.parent = slotUI.gameObject.transform;
+            slotUI.iconeItemSlot.transform.localScale = new Vector3(80, 80, 80);
             slotUI.isFull = true;
         slotUI.isSelected = true;
+            slotUI.iconeItemSlot.GetComponent<Rigidbody>().detectCollisions = false;
       }
 
-    // ao inves de usar um for loop, indicar direto do item menu e slotItem
-   
+    }
+
+    public void AbreMenu()
+    {
+        if (slotUI != null)
+        {
+
+            if (slotUI.isSelected == true && slotUI.isFull == false)
+            {
+                menuObj.SetActive(true);
+
+            }
+
+            if (slotUI.isFull == true && slotUI.isSelected == true)
+            {
+                menuObj.SetActive(true);
+
+            }
+        }
+
+    }
+
+    public void FechaMenu()
+    {
+        menuObj.SetActive(false);
+    }
 
 
-
-
-    // for (int i = 0; i < slotsUI.Length - 1; i++)
-    // {
-    //   Debug.Log("VERIFICA SLOT" + i + slotsUI[i].isSelected);
-    //    if (slotsUI[i].isFull == true || slotsUI[i].isSelected == false ) 
-       
-    //    return;
-
-    //   if (slotsUI[i].isFull == false && slotsUI[i].isSelected == true )
-    //   {
-
-    //     slotsUI[i].itemSlotObj = Instantiate(itemMenu, slotsUI[i].gameObject.transform.position, itemMenu.gameObject.transform.rotation);
-    //     slotsUI[i].itemSlotObj.transform.parent = slotsUI[i].gameObject.transform;
-    //     slotsUI[i].itemSlotObj.transform.localScale = new Vector3 (80,80,80);
-    //     slotsUI[i].isFull = true;
-    //     slotsUI[i].isSelected = true;
-    //   }
-    // }
-  }
-
-    
 }

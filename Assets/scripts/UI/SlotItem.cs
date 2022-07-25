@@ -8,13 +8,13 @@ public class SlotItem : MonoBehaviour
 
    public bool isSelected;
 
-   public GameObject itemSlotObj;
+    public GameObject iconeItemSlot;
 
-   public InstanciaItensManager ItensManager;
+    public InstanciaItensManager ItensManager;
 
-   public GameObject menu;
+    // public GameObject menu;
 
-   public SlotItem[] otherSlots;
+    public SlotItem[] otherSlots;
 
    public UIManager UIManager;
 
@@ -26,37 +26,16 @@ public class SlotItem : MonoBehaviour
 
    private void Update() {
 
-        // if (otherSlots[0].isSelected || otherSlots[1].isSelected)
-        // {
-        //    if (isSelected)
-        //    {
-        //    StartCoroutine(Deselect());
-
-        //    }
-        // }
-
-        if (isFull)
-        {
-            itemSlotObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-        }
 
     }
 
 private void Awake() {
 
    UIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        ItensManager = GameObject.Find("InstanciaItensManager").GetComponent<InstanciaItensManager>();
 }
 
 
-    // ele está definindo o itemSlotObj cedo demais. Precisa ir para o ItemMenu
-    // public void SelectSlot()
-    // {
-    //      StartCoroutine(Select());
-
-
-
-
-    //  }
 
     public void SelectDeselectSlot()
     {
@@ -79,25 +58,8 @@ private void Awake() {
 
     }
 
-   public void AbreMenu()
-   {
-   
-        if (isSelected == true && isFull == false)
-        {
-             menu.SetActive(true);
 
-        }
-
-        if (isFull == true && isSelected == true)
-        {
-              menu.SetActive(true);
-
-        }
-     
-    
-   }
-
-   IEnumerator Deselect()
+    IEnumerator Deselect()
    {
         yield return new WaitForSeconds(.001f);
         otherSlots[0].isSelected = false;

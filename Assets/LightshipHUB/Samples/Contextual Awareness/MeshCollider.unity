@@ -262,8 +262,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 63572284}
-        m_TargetAssemblyTypeName: SlotItem, Assembly-CSharp
+      - m_Target: {fileID: 134668228}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: AbreMenu
         m_Mode: 1
         m_Arguments:
@@ -338,9 +338,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   isSelected: 0
-  itemSlotObj: {fileID: 0}
+  iconeItemSlot: {fileID: 0}
   ItensManager: {fileID: 1918611493}
-  menu: {fileID: 31780645}
   otherSlots:
   - {fileID: 339608745}
   - {fileID: 1815130849}
@@ -668,6 +667,7 @@ MonoBehaviour:
   - {fileID: 1815130849}
   - {fileID: 63572284}
   slotUI: {fileID: 0}
+  menuObj: {fileID: 31780645}
 --- !u!4 &134668229
 Transform:
   m_ObjectHideFlags: 0
@@ -695,7 +695,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1111,8 +1111,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 339608745}
-        m_TargetAssemblyTypeName: SlotItem, Assembly-CSharp
+      - m_Target: {fileID: 134668228}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: AbreMenu
         m_Mode: 1
         m_Arguments:
@@ -1207,9 +1207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   isSelected: 0
-  itemSlotObj: {fileID: 0}
+  iconeItemSlot: {fileID: 0}
   ItensManager: {fileID: 1918611493}
-  menu: {fileID: 31780645}
   otherSlots:
   - {fileID: 1815130849}
   - {fileID: 63572284}
@@ -2663,8 +2662,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1815130849}
-        m_TargetAssemblyTypeName: SlotItem, Assembly-CSharp
+      - m_Target: {fileID: 134668228}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: AbreMenu
         m_Mode: 1
         m_Arguments:
@@ -2759,9 +2758,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   isSelected: 0
-  itemSlotObj: {fileID: 0}
+  iconeItemSlot: {fileID: 0}
   ItensManager: {fileID: 1918611493}
-  menu: {fileID: 31780645}
   otherSlots:
   - {fileID: 339608745}
   - {fileID: 63572284}
