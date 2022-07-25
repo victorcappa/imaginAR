@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class UIManager : MonoBehaviour
 
     public AudioClip minusPlus, plusMinus, apertaBtn;
 
-    // public SlotItem[] slotsUI; // slot onde se guarda os itens
+    public SlotItem[] slotsUI; // slot onde se guarda os itens
     //public GameObject[] itemMenu; // itens do meu, para escolher e guardar nos slots
 
     public SlotItem slotUI;
@@ -20,6 +22,8 @@ public class UIManager : MonoBehaviour
     public GameObject menuObj;
 
     public bool ferramentaUI, objUI;
+
+    public bool menuAberto;
 
 
 
@@ -39,6 +43,8 @@ public class UIManager : MonoBehaviour
 
             ferramentaUI = false;
             objUI = true;
+
+            MostraSlots();
 
             if (slotUI != null && slotUI.iconeItemSlot != null)
             {
@@ -63,6 +69,8 @@ public class UIManager : MonoBehaviour
 
             ferramentaUI = true;
             objUI = false;
+
+            EscondeSlots();
 
             if (slotUI != null && slotUI.iconeItemSlot != null)
             {
@@ -132,12 +140,17 @@ public class UIManager : MonoBehaviour
             if (slotUI.isSelected == true && slotUI.isFull == false)
             {
                 menuObj.SetActive(true);
+                menuAberto = true;
+
 
             }
 
             if (slotUI.isFull == true && slotUI.isSelected == true)
             {
                 menuObj.SetActive(true);
+                menuAberto = true;
+
+
 
             }
         }
@@ -147,7 +160,92 @@ public class UIManager : MonoBehaviour
     public void FechaMenu()
     {
         menuObj.SetActive(false);
+        menuAberto = false;
+
     }
+
+
+    public void MostraSlots()
+    {
+
+        Color fadeOut = new Color(255, 255, 255, 0f);
+        Color fadeIn = new Color(255, 255, 255, .2f);
+
+
+        for (int i = 0; i <= slotsUI.Length - 1; i++)
+        {
+            StartCoroutine(FadeIn(slotsUI[i], 1f, .2f));
+
+
+        }
+
+
+
+    }
+
+    public void EscondeSlots()
+    {
+
+        Color fadeOut = new Color(255, 255, 255, 0f);
+        Color fadeIn = new Color(255, 255, 255, .4f);
+
+
+
+
+        for (int i = 0; i <= slotsUI.Length - 1; i++)
+        {
+            // slotsUI[i].GetComponent<Image>().color = Color.Lerp(fadeIn, fadeOut, time / duration);
+            // time += Time.deltaTime;
+
+            StartCoroutine(FadeOut(slotsUI[i], .7f, 0f));
+
+
+        }
+
+
+
+
+
+    }
+
+    IEnumerator FadeOut(SlotItem slotItem, float duration, float alphaFinal)
+    {
+        float alpha = slotItem.GetComponent<Image>().color.a;
+
+        while (slotItem.GetComponent<Image>().color.a > alphaFinal)
+        {
+            slotItem.GetComponent<Image>().color = new Color(255, 255, 255, a: alpha);
+
+            alpha -= 0.1f;
+
+
+
+            yield return new WaitForSeconds(duration / 10);
+
+
+
+
+        }
+    }
+    IEnumerator FadeIn(SlotItem slotItem, float duration, float alphaFinal)
+    {
+        float alpha = slotItem.GetComponent<Image>().color.a;
+
+        while (slotItem.GetComponent<Image>().color.a < alphaFinal)
+        {
+            slotItem.GetComponent<Image>().color = new Color(255, 255, 255, a: alpha);
+
+            alpha += 0.1f;
+
+
+            yield return new WaitForSeconds(duration / 10);
+
+
+
+
+        }
+    }
+
 
 
 }

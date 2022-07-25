@@ -668,6 +668,8 @@ MonoBehaviour:
   - {fileID: 63572284}
   slotUI: {fileID: 0}
   menuObj: {fileID: 31780645}
+  ferramentaUI: 0
+  objUI: 0
 --- !u!4 &134668229
 Transform:
   m_ObjectHideFlags: 0
