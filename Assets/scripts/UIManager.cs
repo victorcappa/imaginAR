@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     public AudioClip minusPlus, plusMinus, apertaBtn;
 
     public SlotItem[] slotsUI; // slot onde se guarda os itens
-    public GameObject[] itemMenu; // itens do meu, para escolher e guardar nos slots
+    //public GameObject[] itemMenu; // itens do meu, para escolher e guardar nos slots
 
     public SlotItem slotUI;
 
@@ -74,9 +74,11 @@ public class UIManager : MonoBehaviour
       {
 
         slotUI.itemSlotObj = Instantiate(itemMenu, slotUI.gameObject.transform.position, itemMenu.gameObject.transform.rotation);
+            slotUI.ItensManager.itemSlotSelecionado = slotUI.itemSlotObj;
         slotUI.itemSlotObj.transform.parent = slotUI.gameObject.transform;
         slotUI.itemSlotObj.transform.localScale = new Vector3 (80,80,80);
-        slotUI.isFull = true;
+            //slotUI.itemSlotObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            slotUI.isFull = true;
         slotUI.isSelected = true;
       }
 

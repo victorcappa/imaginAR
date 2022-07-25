@@ -27,68 +27,93 @@ public class InstanciaItensManager : MonoBehaviour
 
    void Update() 
         {
-         
-         // verifica se tocou e onde
-         // verifica se o slot está cheio ou apenas selecionado
-         // instancia o objeto do slot
 
-            
-             if (PlatformAgnosticInput.touchCount <= 0) { return; }
 
-if (slotSelecionado != null)
-{
 
- var touch = PlatformAgnosticInput.GetTouch(0);
+        if (PlatformAgnosticInput.touchCount <= 0) { return; }
+
+        if (slotSelecionado != null)
+        {
+            var touch = PlatformAgnosticInput.GetTouch(0);
             ray = ARCamera.GetComponent<Camera>().ScreenPointToRay(touch.position);
 
-            if (touch.phase == TouchPhase.Began && !touch.IsTouchOverUIObject()) 
+            if (touch.phase == TouchPhase.Began && !touch.IsTouchOverUIObject())
             {
               
         
              if(Physics.Raycast(ray,out hit))
-             { 
-                
-                Vector3 posicaoFinal = new Vector3 (ray.direction.x, ray.direction.y ,ray.direction.z);
-                Vector3 posicaoInicial = new Vector3 (ray.direction.x, ARCamera.transform.position.y, ARCamera.transform.position.z);
-
-
-                if (slotSelecionado.isFull == true && slotSelecionado.isSelected == true)
                 {
-                    Debug.Log(slotSelecionado.itemSlotObj.name);
-                // obj = Instantiate(OHcontroller.ObjectHolder,posicaoFinal, transform.rotation);
-               Quaternion objRot = new Quaternion(0f,0f,0f,0f);
-               obj = Instantiate(itemSlotSelecionado);
 
-               obj.transform.localScale = new Vector3(0.3f,0.3f,0.3f);
+                    Debug.Log(hit.collider.gameObject.layer);
 
-                obj.SetActive(true);
-       
-                     
-                Rigidbody rb = obj.GetComponent<Rigidbody>();
-                rb.velocity = new Vector3(0f, 0f, 0f);
-                rb.angularVelocity = new Vector3(0f, 0f, 0f);
+                    // Vector3 posicaoInicial = new Vector3 (ray.direction.x, ARCamera.transform.position.y, ARCamera.transform.position.z);
 
 
-    
-                float force = 200.0f;
+                    if (slotSelecionado.isFull == true && slotSelecionado.isSelected == true)
 
-                rb.AddForce(posicaoFinal * force);
-                Debug.Log("LOG INSTANCIA" + slotSelecionado.name + slotSelecionado.isFull + slotSelecionado.isSelected );
+                    {
+
+                        if (hit.collider.gameObject.GetComponent<Rigidbody>() != null)
+                        {
+                            return;
+                        }
+                        else if (hit.collider.gameObject.GetComponent<Rigidbody>() == null)
+                        {
+
+                            itemSlotSelecionado = slotSelecionado.itemSlotObj;
+
+                            // obj = Instantiate(OHcontroller.ObjectHolder,posicaoFinal, transform.rotation);
+                            // Quaternion objRot = new Quaternion(0f, 0f, 0f, 0f);
+                            // obj = Instantiate(itemSlotSelecionado, ARCamera.transform);
+                            StartCoroutine(routine: SaiDaCamera());
+
+
+
+
+                        }
+
+
+
+
+                    }
+
+
+
+
+
+
+
                 }
-
-                
-               
-
-                               
-    
-
-
-       
             }
-            }
-}
-    
-           
         }
+
+
+    }
+
+    IEnumerator SaiDaCamera()
+    {
+        Vector3 posicaoFinal = new Vector3(ray.direction.x, ray.direction.y, ray.direction.z);
+        float force = 50.0f;
+
+
+        obj = Instantiate(itemSlotSelecionado, ARCamera.transform);
+        obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0f, 0f, 0f);
+        rb.angularVelocity = new Vector3(0f, 0f, 0f);
+
+        obj.SetActive(true);
+
+        rb.AddForce(posicaoFinal * force);
+
+        yield return new WaitForSeconds(.5f);
+        ARCamera.transform.DetachChildren();
+
+
+    }
+
+
 
 }

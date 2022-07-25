@@ -240,7 +240,7 @@ private void Update() {
     
     void GeradorMassa() {
 
-        float escolheMassa = Mathf.Round(Random.Range(10,20) );
+        float escolheMassa = Mathf.Round(Random.Range(10f, 20f));
          
 
          switch (escolheMassa) {

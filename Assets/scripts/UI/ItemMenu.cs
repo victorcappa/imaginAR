@@ -11,7 +11,13 @@ public class ItemMenu : MonoBehaviour
     
    public UIManager UIManager;
    public InstanciaItensManager itensManager;
-        public UnityEvent interactEvent;
+    public UnityEvent interactEvent;
+
+    public GameObject objPrefab;
+
+    GameObject objSlot;
+
+
 
     private void Awake() {
         UIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
@@ -21,11 +27,15 @@ public class ItemMenu : MonoBehaviour
 
 
      private void OnMouseDown() {
-         interactEvent.Invoke();
 
-         UIManager.VerificaSlots(this.gameObject);
-         itensManager.itemSlotSelecionado = GameObject.Find(this.gameObject.name + "(Clone)Item");
-     }
+        interactEvent.Invoke();
+
+        objSlot = Instantiate(objPrefab);
+        //objSlot.SetActive(value: false);
+
+
+        UIManager.VerificaSlots(objSlot);
+    }
  
 
 

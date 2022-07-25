@@ -276,7 +276,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 63572284}
         m_TargetAssemblyTypeName: SlotItem, Assembly-CSharp
-        m_MethodName: SelectSlot
+        m_MethodName: SelectDeselectSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -387,7 +387,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123791759
 GameObject:
@@ -510,8 +510,8 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5511341021397638506}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &123791762
 MonoBehaviour:
@@ -667,7 +667,6 @@ MonoBehaviour:
   - {fileID: 339608745}
   - {fileID: 1815130849}
   - {fileID: 63572284}
-  itemMenu: []
   slotUI: {fileID: 0}
 --- !u!4 &134668229
 Transform:
@@ -682,7 +681,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &134668230
 AudioSource:
@@ -1126,7 +1125,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 339608745}
         m_TargetAssemblyTypeName: SlotItem, Assembly-CSharp
-        m_MethodName: SelectSlot
+        m_MethodName: SelectDeselectSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1289,7 +1288,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &541039328
 MonoBehaviour:
@@ -1370,7 +1369,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &543110804
 MonoBehaviour:
@@ -1386,7 +1385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
+  m_XRTrackingOrigin: {fileID: 5511341021397638506}
   m_ActionsAsset: {fileID: 0}
   m_PointAction: {fileID: 0}
   m_MoveAction: {fileID: 0}
@@ -1567,6 +1566,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1463236727}
     m_Modifications:
+    - target: {fileID: 4403091916571316019, guid: 840bc80f6ec154777b8d2d569c33f9fc, type: 3}
+      propertyPath: objPrefab
+      value: 
+      objectReference: {fileID: 3613924070195809467, guid: 46f2cef169944453d8b28d333454a40d, type: 3}
+    - target: {fileID: 4653378681785688183, guid: 840bc80f6ec154777b8d2d569c33f9fc, type: 3}
+      propertyPath: objPrefab
+      value: 
+      objectReference: {fileID: 3613924070195809467, guid: 46f2cef169944453d8b28d333454a40d, type: 3}
+    - target: {fileID: 4653378681785688183, guid: 840bc80f6ec154777b8d2d569c33f9fc, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4653378683117426796, guid: 840bc80f6ec154777b8d2d569c33f9fc, type: 3}
       propertyPath: m_Name
       value: menu
@@ -1659,6 +1670,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4653378683155839818, guid: 840bc80f6ec154777b8d2d569c33f9fc, type: 3}
+      propertyPath: objPrefab
+      value: 
+      objectReference: {fileID: 3613924070195809467, guid: 46f2cef169944453d8b28d333454a40d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840bc80f6ec154777b8d2d569c33f9fc, type: 3}
 --- !u!1 &1303604147
@@ -1754,7 +1769,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1303604150
 MonoBehaviour:
@@ -1789,7 +1804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4544129020768840141, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4544129020768840141, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2167,7 +2182,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5511341021397638506}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &1606870697
 Light:
@@ -2326,7 +2341,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1664526107
 MonoBehaviour:
@@ -2537,7 +2552,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815130843
 GameObject:
@@ -2662,7 +2677,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1815130849}
         m_TargetAssemblyTypeName: SlotItem, Assembly-CSharp
-        m_MethodName: SelectSlot
+        m_MethodName: SelectDeselectSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2925,12 +2940,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918611492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.356435, y: 4.7251253, z: 99.964584}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2102946877
 PrefabInstance:
@@ -3108,7 +3123,7 @@ Transform:
   m_Children:
   - {fileID: 5511341021047460315}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5511341020209582951
 GameObject:
@@ -3333,10 +3348,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 123791761}
   - {fileID: 1606870696}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5511341021397638507
 Camera:
