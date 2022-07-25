@@ -12,13 +12,21 @@ public class UIManager : MonoBehaviour
 
     public AudioClip minusPlus, plusMinus, apertaBtn;
 
-    public SlotItem[] slotsUI; // slot onde se guarda os itens
+    // public SlotItem[] slotsUI; // slot onde se guarda os itens
     //public GameObject[] itemMenu; // itens do meu, para escolher e guardar nos slots
 
     public SlotItem slotUI;
 
     public GameObject menuObj;
 
+    public bool ferramentaUI, objUI;
+
+
+
+    private void Awake()
+    {
+        ferramentaUI = true;
+    }
 
     public void MaisMenosAnim()
   {
@@ -26,12 +34,25 @@ public class UIManager : MonoBehaviour
     {
       maisMenosObj.GetComponent<Animator>().Play("plusMinus");
       canvasObj.GetComponent<Animator>().Play("abreMenu");
-          maisMenosObj.GetComponent<Animator>().Play(stateName: "clica.apertaMais");
-                    this.gameObject.GetComponent<AudioSource>().PlayOneShot(clip: plusMinus);
+            maisMenosObj.GetComponent<Animator>().Play(stateName: "clica.apertaMais");
+            this.gameObject.GetComponent<AudioSource>().PlayOneShot(clip: plusMinus);
+
+            ferramentaUI = false;
+            objUI = true;
+
+            if (slotUI != null && slotUI.iconeItemSlot != null)
+            {
+                slotUI.iconeItemSlot.SetActive(value: true);
+
+            }
 
 
 
-      StartCoroutine(EsperaAbreMenu());
+
+
+
+
+            StartCoroutine(EsperaAbreMenu());
     }
     if (maisAbriu == true)
     {
@@ -40,7 +61,16 @@ public class UIManager : MonoBehaviour
           maisMenosObj.GetComponent<Animator>().Play(stateName: "clica.apertaMenos");
           this.gameObject.GetComponent<AudioSource>().PlayOneShot(clip: minusPlus);
 
-      StartCoroutine(EsperaFechaMenu());
+            ferramentaUI = true;
+            objUI = false;
+
+            if (slotUI != null && slotUI.iconeItemSlot != null)
+            {
+                slotUI.iconeItemSlot.SetActive(value: false);
+
+            }
+
+            StartCoroutine(EsperaFechaMenu());
     }
   }
 
@@ -81,13 +111,21 @@ public class UIManager : MonoBehaviour
             slotUI.iconeItemSlot.transform.localScale = new Vector3(80, 80, 80);
             slotUI.isFull = true;
         slotUI.isSelected = true;
-            slotUI.iconeItemSlot.GetComponent<Rigidbody>().detectCollisions = false;
-      }
+            //slotUI.iconeItemSlot.GetComponent<Rigidbody>().detectCollisions = false;
+        }
 
     }
 
     public void AbreMenu()
     {
+        StartCoroutine(MenuAguardaNovoItem());
+
+    }
+
+    IEnumerator MenuAguardaNovoItem()
+    {
+        yield return new WaitForSeconds(.07f);
+
         if (slotUI != null)
         {
 

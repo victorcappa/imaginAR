@@ -35,82 +35,73 @@ public class InstanciaItensManager : MonoBehaviour
     void Update()
     {
 
-
-
-        if (PlatformAgnosticInput.touchCount <= 0) { return; }
-        var touch = PlatformAgnosticInput.GetTouch(0);
-
-        if (slotSelecionado != null)
+        if (UIManager.objUI == true)
         {
-            ray = ARCamera.GetComponent<Camera>().ScreenPointToRay(touch.position);
 
-            if (touch.phase == TouchPhase.Began && !touch.IsTouchOverUIObject())
+            if (PlatformAgnosticInput.touchCount <= 0) { return; }
+            var touch = PlatformAgnosticInput.GetTouch(0);
+
+            if (slotSelecionado != null)
             {
-              
-        
-             if(Physics.Raycast(ray,out hit))
+                ray = ARCamera.GetComponent<Camera>().ScreenPointToRay(touch.position);
+
+                if (touch.phase == TouchPhase.Began && !touch.IsTouchOverUIObject())
                 {
 
-                    Debug.Log(hit.collider.gameObject.layer);
 
-                    // Vector3 posicaoInicial = new Vector3 (ray.direction.x, ARCamera.transform.position.y, ARCamera.transform.position.z);
-
-
-                    if (slotSelecionado.isFull == true && slotSelecionado.isSelected == true)
-
+                    if (Physics.Raycast(ray, out hit))
                     {
 
-                        if (hit.collider.gameObject.GetComponent<Rigidbody>() != null)
+                        Debug.Log(hit.collider.gameObject.layer);
+
+
+
+                        if (slotSelecionado.isFull == true && slotSelecionado.isSelected == true)
+
                         {
-                            return;
+
+                            if (hit.collider.gameObject.GetComponent<Rigidbody>() != null)
+                            {
+                                return;
+                            }
+                            else if (hit.collider.gameObject.GetComponent<Rigidbody>() == null)
+                            {
+
+                                itemSlotSelecionado = slotSelecionado.iconeItemSlot.GetComponent<ItemMenu>().objPrefab;
+
+
+                                StartCoroutine(routine: SaiDaCamera());
+
+
+
+
+                            }
+
+
+
+
                         }
-                        else if (hit.collider.gameObject.GetComponent<Rigidbody>() == null)
-                        {
-
-                            itemSlotSelecionado = slotSelecionado.iconeItemSlot.GetComponent<ItemMenu>().objPrefab;
-
-                            // obj = Instantiate(OHcontroller.ObjectHolder,posicaoFinal, transform.rotation);
-                            // Quaternion objRot = new Quaternion(0f, 0f, 0f, 0f);
-                            // obj = Instantiate(itemSlotSelecionado, ARCamera.transform);
-                            StartCoroutine(routine: SaiDaCamera());
 
 
 
-
-                        }
 
 
 
 
                     }
+                }
 
 
-
-
-
-
+                if (slotSelecionado.isSelected == true && slotSelecionado.isFull == false && !touch.IsTouchOverUIObject())
+                {
+                    UIManager.menuObj.SetActive(false);
+                    slotSelecionado.isSelected = false;
 
                 }
-            }
-
-
-            if (slotSelecionado.isSelected == true && slotSelecionado.isFull == false && !touch.IsTouchOverUIObject())
-            {
-                UIManager.menuObj.SetActive(false);
-                slotSelecionado.isSelected = false;
 
             }
-
         }
-        // if (slotSelecionado == null)
-        // {
-        //     if (touch.phase == TouchPhase.Began && touch.IsTouchOverUIObject())
-        //     {
-        //         UIManager.menuObj.SetActive(false);
 
-        //     }
-
-        // }
 
 
 
