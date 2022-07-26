@@ -23,7 +23,7 @@
 # Visual Studio cache directory
 .vs/
 
-*.cs
+/[Aa]ssets/[Ss]cripts/
 
 # Gradle cache directory
 .gradle/
