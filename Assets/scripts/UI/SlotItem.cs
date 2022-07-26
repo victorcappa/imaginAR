@@ -90,7 +90,7 @@ private void Awake() {
 
     }
 
-    void Select()
+    IEnumerator Select()
     {
         if (!isSelected && UIManager.menuAberto == true) //&& UIManager.menuObj == isActiveAndEnabled)
         {
