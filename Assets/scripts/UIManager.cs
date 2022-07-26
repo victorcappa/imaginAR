@@ -10,7 +10,8 @@ public class UIManager : MonoBehaviour
     
 
     public GameObject maisMenosObj, canvasObj;
-    bool maisAbriu;
+
+    bool maisBtnAbriu; // verifica se o btn + foi pressionado, mostrando os slots
 
     public AudioClip minusPlus, plusMinus, apertaBtn;
 
@@ -34,7 +35,7 @@ public class UIManager : MonoBehaviour
 
     public void MaisMenosAnim()
   {
-    if (maisAbriu == false)
+        if (maisBtnAbriu == false)
     {
       maisMenosObj.GetComponent<Animator>().Play("plusMinus");
       canvasObj.GetComponent<Animator>().Play("abreMenu");
@@ -60,7 +61,7 @@ public class UIManager : MonoBehaviour
 
             StartCoroutine(EsperaAbreMenu());
     }
-    if (maisAbriu == true)
+        if (maisBtnAbriu == true)
     {
       maisMenosObj.GetComponent<Animator>().Play("minusPlus");
             canvasObj.GetComponent<Animator>().Play("fechaMenu");
@@ -91,13 +92,13 @@ public class UIManager : MonoBehaviour
   IEnumerator EsperaAbreMenu()
   {
     yield return new WaitForSeconds(.1f);
-    maisAbriu = true;
+        maisBtnAbriu = true;
   }
 
    IEnumerator EsperaFechaMenu()
   {
     yield return new WaitForSeconds(.1f);
-    maisAbriu = false;
+        maisBtnAbriu = false;
   }
 
 

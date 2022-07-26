@@ -54,7 +54,7 @@ private void Awake() {
 
         if (otherSlots[0].isSelected || otherSlots[1].isSelected)
         {
-            StartCoroutine(Deselect());
+            Deselect();
             StartCoroutine(Select());
 
             // this.gameObject.GetComponent<Image>().color = Color.Lerp(corBase, corSeleciona, 1f);
@@ -78,11 +78,9 @@ private void Awake() {
     }
 
 
-    IEnumerator Deselect()
+    void Deselect()
    {
-        yield return new WaitForSeconds(.01f);
-        otherSlots[0].isSelected = false;
-        otherSlots[1].isSelected = false;
+
 
         StartCoroutine(MudaCor(otherSlots[1].gameObject, 1f, corBase));
         StartCoroutine(MudaCor(otherSlots[0].gameObject, 1f, corBase));
@@ -92,7 +90,7 @@ private void Awake() {
 
     }
 
-    IEnumerator Select()
+    void Select()
     {
         if (!isSelected && UIManager.menuAberto == true) //&& UIManager.menuObj == isActiveAndEnabled)
         {
@@ -135,6 +133,10 @@ private void Awake() {
 
     IEnumerator MudaCor(GameObject slotObj, float duration, Color corFinal)
     {
+        yield return new WaitForSeconds(0.1f);
+
+        otherSlots[0].isSelected = false;
+        otherSlots[1].isSelected = false;
 
         float lerpT = 0f;
         while (slotObj.gameObject.GetComponent<Image>().color != corFinal)
