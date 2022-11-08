@@ -328,7 +328,6 @@ MonoBehaviour:
   isFull: 0
   isSelected: 0
   iconeItemSlot: {fileID: 1923462903}
-  itemSlotImg: {fileID: 244453650}
   ItensManager: {fileID: 1918611493}
   otherSlots:
   - {fileID: 339608745}
@@ -796,7 +795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &244453648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1065,7 +1064,6 @@ MonoBehaviour:
   isFull: 0
   isSelected: 0
   iconeItemSlot: {fileID: 1986228117}
-  itemSlotImg: {fileID: 671091486}
   ItensManager: {fileID: 1918611493}
   otherSlots:
   - {fileID: 776266408}
@@ -1483,7 +1481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &671091484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1613,7 +1611,6 @@ MonoBehaviour:
   isFull: 0
   isSelected: 0
   iconeItemSlot: {fileID: 1035515450}
-  itemSlotImg: {fileID: 1959091974}
   ItensManager: {fileID: 1918611493}
   otherSlots:
   - {fileID: 339608745}
@@ -3039,7 +3036,6 @@ MonoBehaviour:
   isFull: 0
   isSelected: 0
   iconeItemSlot: {fileID: 0}
-  itemSlotImg: {fileID: 0}
   ItensManager: {fileID: 1918611493}
   otherSlots:
   - {fileID: 339608745}
@@ -3326,7 +3322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1959091972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3416,7 +3412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1986228116
 RectTransform:
   m_ObjectHideFlags: 0
